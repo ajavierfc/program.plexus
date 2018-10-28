@@ -18,9 +18,11 @@ from resources.plexus.resolver import go_to_id
 from resources.plexus.acecore import stop_aceengine
 from resources.plexus.history import *
 from resources.plexus.mystreams import *
+from resources.plexus.m3ulist import *
                                                                                                                                                                                                                                                                   
 def main_menu():
       addDir('[B]'+translate(30001)+'[/B]',MainURL,10,os.path.join(addonpath,art,'mystreams.png'),2,True)
+      addDir('[B]Load stream list[/B]',MainURL,14,os.path.join(addonpath,art,'mystreams.png'),2,True)
       if settings.getSetting('addon_history') == "true":
       	addDir('[B]'+translate(30002)+'[/B]',MainURL,8,os.path.join(addonpath,art,'history.png'),2,True)
       	if "confluence" in xbmc.getSkinDir(): addLink('','','plexus')
@@ -111,6 +113,7 @@ elif mode==10: my_streams_menu()
 elif mode==11: add_stream()
 elif mode==12: add_stream(name,url,iconimage)
 elif mode==13: remove_stream(name,url)
+elif mode==14: load_m3u()
 #from 300-399 Advanced functions
 elif mode==300: advanced_menu()
 elif mode==301: import_advancedxml()
